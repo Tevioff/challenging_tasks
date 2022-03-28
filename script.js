@@ -2,10 +2,10 @@
 
 const num = 266219;
 
-const spl = num.toString().split('').reduce((a, b) => a * b);
+const splt = num.toString().split('').reduce((a, b) => a * b);
 
-const kub = spl ** 3;
+const kube = splt ** 3;
 
-const sliceStr = String(kub).slice(0, 2);
+const sliceStr = String(kube).slice(0, 2);
 
 console.log(sliceStr);
