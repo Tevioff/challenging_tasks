@@ -24,8 +24,8 @@ const ru = ['Понедельник, Вторник, Среда, Четврег,
 console.log(ru);
 
 const namePerson = 'Артём';
-namePerson === 'Артём' 
-? console.log('директор') 
-: namePerson === 'Александр' 
-? console.log('предподаватель') 
-: console.log('студент');
+namePerson === 'Артём' ?
+    console.log('директор') :
+    namePerson === 'Александр' ?
+    console.log('предподаватель') :
+    console.log('студент');
