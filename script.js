@@ -1,9 +1,31 @@
-const num = 266219;
+'use strict';
+const lang = 'ru';
+if (lang === 'ru') {
+    console.log(
+        'Понедельник, Вторник, Среда, Четврег, Пятница, Суббота, Воскрение'
+    );
+} else {
+    console.log(
+        'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'
+    );
+}
 
-const spl = num.toString().split('').reduce((a, b) => a * b);
+switch (lang) {
+    case 'en':
+        console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
+        break;
+    case 'ru':
+        console.log('Понедельник, Вторник, Среда, Четврег, Пятница, Суббота, Воскрение');
+        break;
+}
 
-const kub = spl ** 3;
+const en = ['Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'];
+const ru = ['Понедельник, Вторник, Среда, Четврег, Пятница, Суббота, Воскрение'];
+console.log(ru);
 
-const sliceStr = String(kub).slice(0, 2);
-
-console.log(sliceStr);
+const namePerson = 'Артём';
+namePerson === 'Артём' 
+? console.log('директор') 
+: namePerson === 'Александр' 
+? console.log('предподаватель') 
+: console.log('студент');
