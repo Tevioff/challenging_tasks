@@ -1,3 +1,5 @@
+'use strict';
+
 const num = 266219;
 
 const spl = num.toString().split('').reduce((a, b) => a * b);
