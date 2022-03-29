@@ -1,33 +1,10 @@
-'use strict';
+function lorem(str) {
+    if (typeof str !== 'string') {
+        console.log('аргумент не строка');
+        return;
+    }
 
-const lang = 'ru';
-
-if (lang === 'ru') {
-    console.log(
-        'Понедельник, Вторник, Среда, Четврег, Пятница, Суббота, Воскрение'
-    );
-} else {
-    console.log(
-        'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'
-    );
+    str = str.trim();
+    return str.length > 50 ? str.slice(0, 50) + '...' : str;
 }
-
-switch (lang) {
-    case 'en':
-        console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
-        break;
-    case 'ru':
-        console.log('Понедельник, Вторник, Среда, Четврег, Пятница, Суббота, Воскрение');
-        break;
-}
-
-const en = ['Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'];
-const ru = ['Понедельник, Вторник, Среда, Четврег, Пятница, Суббота, Воскрение'];
-console.log(ru);
-
-const namePerson = 'Артём';
-namePerson === 'Артём' ?
-    console.log('директор') :
-    namePerson === 'Александр' ?
-    console.log('предподаватель') :
-    console.log('студент');
+console.log(lorem('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'));
