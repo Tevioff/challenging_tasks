@@ -1,8 +1,10 @@
-let arr = [2, 45, 47, 55, 27, 33, 22];
+let arr = ['22', '37', '400', '311', '49', '81', '247'];
 
-arr.forEach(em => {
-    if (String(em).search(/(2|4)/) === 0) console.log(em);
-});
+for (let i = 0; i < 7; i++) {
+    if (arr[i].startsWith('2') || arr[i].startsWith('4')) {
+        console.log(arr[i]);
+    }
+}
 
 let num = 100;
 
