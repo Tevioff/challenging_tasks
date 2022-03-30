@@ -1,10 +1,15 @@
-function lorem(str) {
-    if (typeof str !== 'string') {
-        console.log('аргумент не строка');
-        return;
-    }
+let arr = [2, 45, 47, 55, 27, 33, 22];
 
-    str = str.trim();
-    return str.length > 50 ? str.slice(0, 50) + '...' : str;
-}
-console.log(lorem('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'));
+arr.forEach(em => {
+    if (String(em).search(/(2|4)/) === 0) console.log(em);
+});
+
+let num = 100;
+
+nextNum:
+    for (let i = 2; i <= num; i++) {
+        for (let j = 2; j < i; j++) {
+            if (i % j == 0) continue nextNum;
+        }
+        console.log(i);
+    }
