@@ -5,13 +5,12 @@ for (let i = 0; i < 7; i++) {
         console.log(arr[i]);
     }
 }
-
 let num = 100;
-
 nextNum:
-    for (let i = 2; i <= num; i++) {
+    for (let i = 2; i <= 100; i++) {
         for (let j = 2; j < i; j++) {
             if (i % j == 0) continue nextNum;
         }
-        console.log(i);
+        console.log('простое: ' + i + ' ' + ' Делители этого числа: 1 и ' + i);
+        num += 'простое: ' + i + ' ' + ' Делители этого числа: 1 и ' + i + '<br>';
     }
