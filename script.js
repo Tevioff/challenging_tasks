@@ -5,12 +5,6 @@ for (let i = 0; i < 7; i++) {
         console.log(arr[i]);
     }
 }
-// let num = 100;
-// nextNum:
-//     for (let i = 2; i <= 100; i++) {
-//         for (let j = 2; j < i; j++) {
-//             if (i % j == 0) continue nextNum;
-//         }
 let num;
 for (let i = 2; i <= 100; i++) {
     let simple = 1;
