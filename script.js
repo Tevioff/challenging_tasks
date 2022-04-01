@@ -1,27 +1,21 @@
-let arr = ['22', '37', '400', '311', '49', '81', '247'];
+'use strict';
+
+const week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+
+const weeks = document.querySelector('.week');
+const date = new Date();
+const todayDay = date.getDay() - 1;
 
 for (let i = 0; i < 7; i++) {
-    if (arr[i].startsWith('2') || arr[i].startsWith('4')) {
-        console.log(arr[i]);
+    if (i < 5 && i != todayDay) {
+        weeks.innerHTML += `${week[i]}<br>`;
     }
-}
-// let num = 100;
-// nextNum:
-//     for (let i = 2; i <= 100; i++) {
-//         for (let j = 2; j < i; j++) {
-//             if (i % j == 0) continue nextNum;
-//         }
-let num;
-for (let i = 2; i <= 100; i++) {
-    let simple = 1;
-    for (let j = 2;
-        (j <= i / 2) && (simple == 1); j = j + 1) {
-        if (i % j == 0) {
-            simple = 0;
-        }
+    if (i > 4) {
+        weeks.innerHTML += `<b>${week[i]}</b><br>`;
     }
-    if (simple == 1) {
-        console.log('простое: ' + i + ' ' + ' Делители этого числа: 1 и ' + i);
-        num += 'простое: ' + i + ' ' + ' Делители этого числа: 1 и ' + i + '<br>';
+
+    if (i === todayDay) {
+        weeks.innerHTML += `<i>${week[i]}</i><br>`;
     }
+
 }
