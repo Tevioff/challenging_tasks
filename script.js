@@ -17,5 +17,4 @@ for (let i = 0; i < 7; i++) {
     if (i === todayDay) {
         weeks.innerHTML += `<i>${week[i]}</i><br>`;
     }
-
 }
