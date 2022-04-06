@@ -31,12 +31,7 @@ setInterval(() => {
             weekday: 'long',
         };
 
-        function dateAndTime(value) {
-            if (value < 10) {
-                value = '0' + value;
-            }
-            return value;
-        }
+        const dateAndTime = value => (value < 10) ? `$0{value}` : value;
         const d = new Date();
         const years = d.getFullYear();
         const hours = dateAndTime(d.getHours());
