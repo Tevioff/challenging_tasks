@@ -23,35 +23,13 @@ setInterval(() => {
     document.getElementById('time').innerHTML = dateTime();
 }, 1000);
 
-
-
-
 setInterval(() => {
     function time() {
-        const week = [
-            'Воскресенье',
-            'Понедельник',
-            'Вторник',
-            'Среда',
-            'Четверг',
-            'Пятница',
-            'Суббота'
-        ];
-
-        const month = [
-            'Января',
-            'Февраля',
-            'Марта',
-            'Апреля',
-            'Майа',
-            'Июня',
-            'Июля',
-            'Августа',
-            'Сентября',
-            'Октября',
-            'Ноября',
-            'Декабря',
-        ];
+        const options = {
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+        };
 
         function dateAndTime(value) {
             if (value < 10) {
@@ -60,17 +38,13 @@ setInterval(() => {
             return value;
         }
         const d = new Date();
-        const n = d.getDay();
-        const mon = d.getMonth();
-        const days = d.getDay();
         const years = d.getFullYear();
         const hours = dateAndTime(d.getHours());
         const minutes = dateAndTime(d.getMinutes());
         const seconds = dateAndTime(d.getSeconds());
 
-        return `Сегодня ${week[n]}, ${days} ${month[mon]} ${years} года, ${hours} ${(hours == 1 || (hours > 19 && hours % 10 == 1)) ? 'час' :
+        return `Сегодня ${d.toLocaleDateString('ru', options)}, ${years} года, ${hours} ${(hours == 1 || (hours > 19 && hours % 10 == 1)) ? 'час' :
         ((hours > 1 && hours < 5) || (hours > 19 && hours % 10 > 1 && hours % 10 < 5)) ? 'часа' : 'часов'} ${minutes} минут ${seconds} секунд `;
-
     }
     document.getElementById('fullTime').innerHTML = time();
 }, 1000);
