@@ -69,9 +69,7 @@ setInterval(() => {
         const seconds = dateAndTime(d.getSeconds());
 
         return `Сегодня ${week[n]}, ${days} ${month[mon]} ${years} года, ${hours} ${(hours == 1 || (hours > 19 && hours % 10 == 1)) ? 'час' :
-        ((hours > 1 && hours < 5) || (hours > 19 && hours % 10 > 1 && hours % 10 < 5)) ? 'часа' : 'часов'} ${minutes} ${(minutes == 1 || (minutes > 19 && minutes % 10 == 1)) ? 'минута' :
-        ((minutes > 1 && minutes < 5) || (minutes > 19 && minutes % 10 > 1 && minutes % 10 < 5)) ? 'минуты' : 'минутов'} ${seconds} ${(seconds == 1 || (seconds > 19 && seconds % 10 == 1)) ? 'секунд' :
-        ((seconds > 1 && seconds < 5) || (seconds > 19 && seconds % 10 > 1 && seconds % 10 < 5)) ? 'секунда' : 'секундов'} `;
+        ((hours > 1 && hours < 5) || (hours > 19 && hours % 10 > 1 && hours % 10 < 5)) ? 'часа' : 'часов'} ${minutes} минут ${seconds} секунд `;
 
     }
     document.getElementById('fullTime').innerHTML = time();
