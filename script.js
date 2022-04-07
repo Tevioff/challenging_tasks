@@ -1,5 +1,6 @@
 'use strict';
 
+
 setInterval(() => {
     function datenAndTime(value) {
         if (value < 10) {
