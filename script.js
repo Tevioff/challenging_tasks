@@ -1,46 +1,25 @@
 'use strict';
+let timer;
+const render = () => {
+	const date = new Date();
 
+	const hours = date.getHours()
+	const greeting = (hours >= 6 && hours < 12) ? 'Доброе утро!' :
+		(hours >= 12 && hours < 18) ? 'Добрый день!' :
+		(hours >= 18 && hours < 24) ? 'Добрый вечер!' : 'Доброй ночи!';
 
-setInterval(() => {
-    function datenAndTime(value) {
-        if (value < 10) {
-            value = '0' + value;
-        }
-        return value;
-    }
+	const week = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+	const weekDay = `Сегодня: ${week[date.getDay()]}`;
 
-    function dateTime() {
-        const current_datetime = new Date();
-        const day = datenAndTime(current_datetime.getDate());
-        const month = datenAndTime(current_datetime.getMonth() + 1);
-        const year = current_datetime.getFullYear();
-        const hours = datenAndTime(current_datetime.getHours());
-        const minutes = datenAndTime(current_datetime.getMinutes());
-        const seconds = datenAndTime(current_datetime.getSeconds());
+	const time = `Текущее время: ${date.toLocaleTimeString('en')}`;
 
-        return day + "." + month + "." + year + " - " + hours + ":" + minutes + ":" + seconds;
-    }
+	const newYear = new Date('1 january 2023')
 
-    document.getElementById('time').innerHTML = dateTime();
-}, 1000);
+	const daysUntilNewYear = `До нового года осталось ${Math.ceil((newYear - date) / 1000 / 60 / 60 / 24)} дней`;
+	document.body.innerHTML = `<p>${greeting} <hr> ${weekDay} <br> ${time} <br> ${daysUntilNewYear}</p>`
+	if (newYear - date <= 0) {
+		clearInterval(timer);
+	}
+};
 
-setInterval(() => {
-    function time() {
-        const options = {
-            month: 'long',
-            day: 'numeric',
-            weekday: 'long',
-        };
-
-        const dateAndTime = value => (value < 10) ? `$0{value}` : value;
-        const d = new Date();
-        const years = d.getFullYear();
-        const hours = dateAndTime(d.getHours());
-        const minutes = dateAndTime(d.getMinutes());
-        const seconds = dateAndTime(d.getSeconds());
-
-        return `Сегодня ${d.toLocaleDateString('ru', options)}, ${years} года, ${hours} ${(hours == 1 || (hours > 19 && hours % 10 == 1)) ? 'час' :
-        ((hours > 1 && hours < 5) || (hours > 19 && hours % 10 > 1 && hours % 10 < 5)) ? 'часа' : 'часов'} ${minutes} минут ${seconds} секунд `;
-    }
-    document.getElementById('fullTime').innerHTML = time();
-}, 1000);
+timer = setInterval(render, 1000);
