@@ -1,0 +1,17 @@
+#car {
+    width: 300px;
+    height: 250px;
+    position: relative;
+}
+#car1 {
+    width: 300px;
+    height: 250px;
+    position: relative;
+}
+
+#car3 {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 20px;
+}
